@@ -7,26 +7,25 @@
     <style>
         body {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
+            justify-content: center;
             background-color: #f0f0f0;
         }
         button {
             padding: 15px 30px;
             font-size: 16px;
+            margin: 10px;
             cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <button id="initialButton" onclick="showNewButton()">Click Me</button>
+    <button id="initialButton" onclick="generateNewButton()">Click Me</button>
 
     <script>
-        function showNewButton() {
-            const initialButton = document.getElementById('initialButton');
-            initialButton.style.display = 'none';
-
+        function generateNewButton() {
             const newButton = document.createElement('button');
             newButton.innerText = 'enta hmar';
             newButton.onclick = function() {
