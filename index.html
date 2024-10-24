@@ -3,46 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Special Website</title>
+    <title>Donkey Picture Upload</title>
     <style>
         body {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             height: 100vh;
-            background-color: #87CEEB; /* Sky blue */
-            transition: background-color 0.5s;
+            background-color: #f0f0f0;
             font-family: Arial, sans-serif;
-            color: white;
+        }
+        img {
+            max-width: 300px;
+            margin-top: 20px;
         }
         h1 {
-            margin-bottom: 20px;
-        }
-        button {
-            padding: 15px 30px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #ff6347; /* Tomato color */
-            color: white;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #ff4500; /* OrangeRed */
+            margin-top: 10px;
+            color: #333;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to My Special Website!</h1>
-    <button onclick="changeBackground()">Change Background Color</button>
+    <h1>Upload a Donkey Picture</h1>
+    <input type="file" accept="image/*" id="fileInput" onchange="displayImage()" />
+    <div id="imageContainer" style="display:none;">
+        <img id="donkeyImage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Donkey_pulling_cart.jpg/800px-Donkey_pulling_cart.jpg" alt="Donkey" />
+        <h1>Alushy</h1>
+    </div>
 
     <script>
-        function changeBackground() {
-            const colors = ['#ff69b4', '#32cd32', '#ffd700', '#6a5acd', '#ff4500'];
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            document.body.style.backgroundColor = randomColor;
+        function displayImage() {
+            const input = document.getElementById('fileInput');
+            const imageContainer = document.getElementById('imageContainer');
+            const donkeyImage = document.getElementById('donkeyImage');
+
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    donkeyImage.src = e.target.result;
+                    imageContainer.style.display = 'flex';
+                    imageContainer.style.flexDirection = 'column';
+                    imageContainer.style.alignItems = 'center';
+                }
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                donkeyImage.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Donkey_pulling_cart.jpg/800px-Donkey_pulling_cart.jpg"; // Default image
+            }
         }
     </script>
 </body>
