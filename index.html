@@ -3,35 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Button</title>
+    <title>Special Website</title>
     <style>
         body {
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
             height: 100vh;
-            justify-content: center;
-            background-color: #f0f0f0;
+            background-color: #87CEEB; /* Sky blue */
+            transition: background-color 0.5s;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        h1 {
+            margin-bottom: 20px;
         }
         button {
             padding: 15px 30px;
             font-size: 16px;
-            margin: 10px;
             cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff6347; /* Tomato color */
+            color: white;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ff4500; /* OrangeRed */
         }
     </style>
 </head>
 <body>
-    <button id="initialButton" onclick="generateNewButton()">Click Me</button>
+    <h1>Welcome to My Special Website!</h1>
+    <button onclick="changeBackground()">Change Background Color</button>
 
     <script>
-        function generateNewButton() {
-            const newButton = document.createElement('button');
-            newButton.innerText = 'enta hmar';
-            newButton.onclick = function() {
-                alert('New button clicked!');
-            };
-            document.body.appendChild(newButton);
+        function changeBackground() {
+            const colors = ['#ff69b4', '#32cd32', '#ffd700', '#6a5acd', '#ff4500'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
         }
     </script>
 </body>
