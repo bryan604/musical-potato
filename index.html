@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donkey Picture Upload</title>
+    <title>Love Button</title>
     <style>
         body {
             display: flex;
@@ -14,42 +14,30 @@
             background-color: #f0f0f0;
             font-family: Arial, sans-serif;
         }
-        img {
-            max-width: 300px;
-            margin-top: 20px;
+        button {
+            padding: 15px 30px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
-        h1 {
-            margin-top: 10px;
-            color: #333;
+        button:hover {
+            background-color: #3700b3;
         }
     </style>
 </head>
 <body>
-    <h1>Upload a Donkey Picture</h1>
-    <input type="file" accept="image/*" id="fileInput" onchange="displayImage()" />
-    <div id="imageContainer" style="display:none;">
-        <img id="donkeyImage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Donkey_pulling_cart.jpg/800px-Donkey_pulling_cart.jpg" alt="Donkey" />
-        <h1>Alushy</h1>
-    </div>
+    <button id="initialButton" onclick="showNewButton()">Click Me</button>
 
     <script>
-        function displayImage() {
-            const input = document.getElementById('fileInput');
-            const imageContainer = document.getElementById('imageContainer');
-            const donkeyImage = document.getElementById('donkeyImage');
-
-            if (input.files && input.files[0]) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    donkeyImage.src = e.target.result;
-                    imageContainer.style.display = 'flex';
-                    imageContainer.style.flexDirection = 'column';
-                    imageContainer.style.alignItems = 'center';
-                }
-                reader.readAsDataURL(input.files[0]);
-            } else {
-                donkeyImage.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Donkey_pulling_cart.jpg/800px-Donkey_pulling_cart.jpg"; // Default image
-            }
+        function showNewButton() {
+            const newButton = document.createElement('button');
+            newButton.innerText = 'I love you Abi';
+            document.body.appendChild(newButton);
         }
     </script>
 </body>
