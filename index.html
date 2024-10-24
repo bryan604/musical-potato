@@ -3,14 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Watch</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Dynamic Button</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <div class="clock" id="clock">
-        <div class="time" id="time"></div>
-        <div class="date" id="date"></div>
-    </div>
-    <script src="script.js"></script>
+    <button id="initialButton" onclick="showNewButton()">Click Me</button>
+
+    <script>
+        function showNewButton() {
+            const initialButton = document.getElementById('initialButton');
+            initialButton.style.display = 'none';
+
+            const newButton = document.createElement('button');
+            newButton.innerText = 'enta hmar';
+            newButton.onclick = function() {
+                alert('New button clicked!');
+            };
+            document.body.appendChild(newButton);
+        }
+    </script>
 </body>
 </html>
