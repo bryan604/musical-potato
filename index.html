@@ -3,45 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click Me Button</title>
+    <title>Button Example</title>
     <style>
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
+            margin: 0;
+            text-align: center;
         }
-        button {
-            padding: 15px 30px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-        #secondButton {
-            display: flex;
-            align-items: center;
-        }
-        .heart {
-            color: red;
-            margin-left: 10px;
+        #message {
+            display: none;
+            margin-top: 10px;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
-    <button id="firstButton">Click Me</button>
-    <div id="secondButtonContainer" style="display: none;">
-        <button id="secondButton">
-            I love you Abi alot, Khaleke good mathe badu z3lk ya amare
-            <span class="heart">&hearts;</span>
-        </button>
+
+    <div>
+        <button id="initialButton" onclick="showMessage()">Click Me</button>
+        <div id="message">كوني منيحا و خليكي قويه و ما تخلي شي يخليكي تضعفي انت انسان الضحكي بتلبقلك بس ❤️</div>
     </div>
 
     <script>
-        document.getElementById("firstButton").onclick = function() {
-            this.style.display = "none"; // Hide the first button
-            document.getElementById("secondButtonContainer").style.display = "block"; // Show the second button
-        };
+        function showMessage() {
+            document.getElementById('initialButton').style.display = 'none';
+            document.getElementById('message').style.display = 'block';
+        }
     </script>
+
 </body>
 </html>
