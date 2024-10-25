@@ -3,42 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Button</title>
+    <title>Click Me Button</title>
     <style>
         body {
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
             background-color: #f0f0f0;
             font-family: Arial, sans-serif;
         }
         button {
             padding: 15px 30px;
-            font-size: 16px;
-            margin: 10px;
+            font-size: 20px;
             cursor: pointer;
-            background-color: #6200ea;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
         }
-        button:hover {
-            background-color: #3700b3;
+        #secondButton {
+            display: flex;
+            align-items: center;
+        }
+        .heart {
+            color: red;
+            margin-left: 10px;
         }
     </style>
 </head>
 <body>
-    <button id="initialButton" onclick="showNewButton()">Click Me</button>
+    <button id="firstButton">Click Me</button>
+    <div id="secondButtonContainer" style="display: none;">
+        <button id="secondButton">
+            I love you Abi alot, Khaleke good mathe badu z3lk ya amare
+            <span class="heart">&hearts;</span>
+        </button>
+    </div>
 
     <script>
-        function showNewButton() {
-            const newButton = document.createElement('button');
-            newButton.innerText = 'I love you Abi';
-            document.body.appendChild(newButton);
-        }
+        document.getElementById("firstButton").onclick = function() {
+            this.style.display = "none"; // Hide the first button
+            document.getElementById("secondButtonContainer").style.display = "block"; // Show the second button
+        };
     </script>
 </body>
 </html>
