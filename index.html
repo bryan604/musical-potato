@@ -3,35 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button Example</title>
+    <title>Button Magic</title>
     <style>
         body {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
-            margin: 0;
-            text-align: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
         }
-        #message {
+        button {
+            margin: 10px 0; /* Vertical margin */
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 250px; /* Set a fixed width for alignment */
+        }
+        .hidden {
             display: none;
-            margin-top: 10px;
-            font-size: 18px;
+        }
+        .green-button {
+            background-color: green;
+            color: white;
         }
     </style>
 </head>
 <body>
 
-    <div>
-        <button id="initialButton" onclick="showMessage()">Click Me</button>
-        <div id="message">كوني منيحا و خليكي قويه و ما تخلي شي يخليكي تضعفي انت انسان الضحكي بتلبقلك بس ❤️</div>
-    </div>
+    <button id="firstButton">Click Me</button>
+    <button id="secondButton" class="hidden">bhbk</button>
+    <button id="thirdButton" class="hidden">ente ahla w aghla she 3nde</button>
+    <button id="fourthButton" class="hidden">ana mfeye baleke ya amare nure ente</button>
+    <button id="fifthButton" class="hidden green-button">ente kel she bel nsbe ele i ❤️ yove you</button>
 
     <script>
-        function showMessage() {
-            document.getElementById('initialButton').style.display = 'none';
-            document.getElementById('message').style.display = 'block';
-        }
+        document.getElementById("firstButton").addEventListener("click", function() {
+            this.classList.add("hidden");
+            document.getElementById("secondButton").classList.remove("hidden");
+        });
+
+        document.getElementById("secondButton").addEventListener("click", function() {
+            this.classList.add("hidden");
+            document.getElementById("thirdButton").classList.remove("hidden");
+        });
+
+        document.getElementById("thirdButton").addEventListener("click", function() {
+            this.classList.add("hidden");
+            document.getElementById("fourthButton").classList.remove("hidden");
+        });
+
+        document.getElementById("fourthButton").addEventListener("click", function() {
+            this.classList.add("hidden");
+            document.getElementById("fifthButton").classList.remove("hidden");
+        });
     </script>
 
 </body>
