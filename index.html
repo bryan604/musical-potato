@@ -3,62 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button Magic</title>
+    <title>Animated Text</title>
     <style>
         body {
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-        }
-        button {
-            margin: 10px 0; /* Vertical margin */
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            width: 250px; /* Set a fixed width for alignment */
-        }
-        .hidden {
-            display: none;
-        }
-        .green-button {
-            background-color: green;
+            background-color: #282c34;
             color: white;
+            font-size: 4em;
+            overflow: hidden;
+        }
+
+        .animated-text {
+            animation: fadeIn 2s infinite;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            50% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(20px); }
         }
     </style>
 </head>
 <body>
-
-    <button id="firstButton">Click Me</button>
-    <button id="secondButton" class="hidden">bhbk</button>
-    <button id="thirdButton" class="hidden">ente ahla w aghla she 3nde</button>
-    <button id="fourthButton" class="hidden">ana mfeye baleke ya amare nure ente</button>
-    <button id="fifthButton" class="hidden green-button">ente kel she bel nsbe ele i ❤️ yove you</button>
-
-    <script>
-        document.getElementById("firstButton").addEventListener("click", function() {
-            this.classList.add("hidden");
-            document.getElementById("secondButton").classList.remove("hidden");
-        });
-
-        document.getElementById("secondButton").addEventListener("click", function() {
-            this.classList.add("hidden");
-            document.getElementById("thirdButton").classList.remove("hidden");
-        });
-
-        document.getElementById("thirdButton").addEventListener("click", function() {
-            this.classList.add("hidden");
-            document.getElementById("fourthButton").classList.remove("hidden");
-        });
-
-        document.getElementById("fourthButton").addEventListener("click", function() {
-            this.classList.add("hidden");
-            document.getElementById("fifthButton").classList.remove("hidden");
-        });
-    </script>
-
+    <div class="animated-text">mabutat biz</div>
 </body>
 </html>
