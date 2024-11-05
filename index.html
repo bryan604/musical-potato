@@ -1,33 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Text</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #282c34;
-            color: white;
-            font-size: 4em;
-            overflow: hidden;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Animated Text</title>
+  <style>
+    /* Reset body margin and center content */
+    body, html {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #111; /* Dark background for contrast */
+      font-family: Arial, sans-serif;
+    }
 
-        .animated-text {
-            animation: fadeIn 2s infinite;
-        }
+    /* Styling for the text */
+    .animated-text {
+      font-size: 4em;
+      color: #ff1a1a;
+      text-shadow: 0 0 10px #ff1a1a, 0 0 20px #ff1a1a, 0 0 30px #ff4d4d, 0 0 40px #ff6666, 0 0 50px #ff9999;
+      animation: glow 2s ease-in-out infinite, color-change 5s ease-in-out infinite, scale 2s ease-in-out infinite;
+    }
 
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(-20px); }
-            50% { opacity: 1; transform: translateY(0); }
-            100% { opacity: 0; transform: translateY(20px); }
-        }
-    </style>
+    /* Neon glow effect animation */
+    @keyframes glow {
+      0%, 100% {
+        text-shadow: 0 0 10px #ff1a1a, 0 0 20px #ff4d4d, 0 0 30px #ff6666, 0 0 40px #ff8080, 0 0 50px #ff9999;
+      }
+      50% {
+        text-shadow: 0 0 20px #ff6666, 0 0 30px #ff8080, 0 0 40px #ff9999, 0 0 50px #ffcccc;
+      }
+    }
+
+    /* Color change animation */
+    @keyframes color-change {
+      0%, 100% {
+        color: #ff1a1a;
+      }
+      50% {
+        color: #ff4d4d;
+      }
+    }
+
+    /* Scale (pulsing) effect animation */
+    @keyframes scale {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="animated-text">today mabutat biz</div>
+  <div class="animated-text">wathup blo</div>
 </body>
 </html>
