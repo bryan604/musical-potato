@@ -3,60 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advanced Animated Text</title>
+  <title>Animated Message</title>
   <style>
-    /* Reset body margin and center content */
-    body, html {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background-color: #111; /* Dark background for contrast */
+    body {
       font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f5f5f5;
     }
 
-    /* Styling for the text */
-    .animated-text {
-      font-size: 4em;
-      color: #ff1a1a;
-      text-shadow: 0 0 10px #ff1a1a, 0 0 20px #ff1a1a, 0 0 30px #ff4d4d, 0 0 40px #ff6666, 0 0 50px #ff9999;
-      animation: glow 2s ease-in-out infinite, color-change 5s ease-in-out infinite, scale 2s ease-in-out infinite;
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #6200EE;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
-    /* Neon glow effect animation */
-    @keyframes glow {
-      0%, 100% {
-        text-shadow: 0 0 10px #ff1a1a, 0 0 20px #ff4d4d, 0 0 30px #ff6666, 0 0 40px #ff8080, 0 0 50px #ff9999;
-      }
-      50% {
-        text-shadow: 0 0 20px #ff6666, 0 0 30px #ff8080, 0 0 40px #ff9999, 0 0 50px #ffcccc;
-      }
+    button:hover {
+      background-color: #3700B3;
     }
 
-    /* Color change animation */
-    @keyframes color-change {
-      0%, 100% {
-        color: #ff1a1a;
-      }
-      50% {
-        color: #ff4d4d;
-      }
-    }
-
-    /* Scale (pulsing) effect animation */
-    @keyframes scale {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.1);
-      }
+    #message {
+      font-size: 20px;
+      color: #000;
+      margin-top: 20px;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
     }
   </style>
 </head>
 <body>
-  <div class="animated-text">wathup blo</div>
+  <div>
+    <button onclick="showMessage()">Click Me</button>
+    <div id="message">xx yom y2anu beleh nemna dghl ma hkna ot biz</div>
+  </div>
+
+  <script>
+    function showMessage() {
+      const message = document.getElementById('message');
+      // Fade in
+      message.style.opacity = 1;
+
+      // Fade out after 3 seconds
+      setTimeout(() => {
+        message.style.opacity = 0;
+      }, 3000);
+    }
+  </script>
 </body>
 </html>
